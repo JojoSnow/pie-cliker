@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("img/flour-bg.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+#header {
+    height: 70px;
+    color: #1b1308;
+    background-color: #c07e41;
+}
+
+#main {
+}
+
+.pieType img {
+    width: 3.5em;
+}
+
+#main #pie img {
+    width: 25em;
+}
+
+.storeItem img {
+    width: 3em;
+}
