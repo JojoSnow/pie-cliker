@@ -16,118 +16,122 @@
         <section id="selection">
             <h3 id="pieSelection">Bake more:</h3>
                 <div class="pieType" id="strawberry">
-                    <img src="img/tastes/strawberry.png" alt="strawberry">
-                    <p>Strawberry pies<br><br>
+                    <img src="img/tastes/strawberry.png" alt="strawberry" id="strawberryImg">
+                    <p id="strawberryP">Strawberry pies<br><br>
                         <span id="strawberryCost" class="costNum">100 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="raspberry">
-                    <img src="img/tastes/raspberry.png" alt="raspberry">
-                    <p>Raspberry pies<br><br>
+                    <img src="img/tastes/raspberry.png" alt="raspberry" id="raspberryImg">
+                    <p id="raspberryP">Raspberry pies<br><br>
                         <span id="raspberryCost" class="costNum">1000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="apple">
-                    <img src="img/tastes/apple.png" alt="apple">
-                    <p>Apple pies<br><br>
+                    <img src="img/tastes/apple.png" alt="apple" id="appleImg">
+                    <p id="appleP">Apple pies<br><br>
                         <span id="appleCost" class="costNum">25000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="banana">
-                    <img src="img/tastes/banana.png" alt="banana">
-                    <p>Banana pies<br><br>
+                    <img src="img/tastes/banana.png" alt="banana" id="bananaImg">
+                    <p id="bananaP">Banana pies<br><br>
                         <span id="bananaCost" class="costNum">300000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="blueberry">
-                    <img src="img/tastes/blueberry.png" alt="blueberry">
-                    <p>Blueberry pies<br><br>
+                    <img src="img/tastes/blueberry.png" alt="blueberry" id="blueberryImg">
+                    <p id="blueberryP">Blueberry pies<br><br>
                         <span id="blueberryCost" class="costNum">1200000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="grape">
-                    <img src="img/tastes/grapes.png" alt="grapes">
-                    <p>Grape pie<br><br>
+                    <img src="img/tastes/grapes.png" alt="grapes" id="grapeImg">
+                    <p id="grapeP">Grape pie<br><br>
                         <span id="grapeCost" class="costNum">4000000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="cherry">
-                    <img src="img/tastes/cherry.png" alt="cherry">
-                    <p>Cherry pies<br><br>
+                    <img src="img/tastes/cherry.png" alt="cherry" id="cherryImg">
+                    <p id="cherryP">Cherry pies<br><br>
                         <span id="cherryCost" class="costNum">10000000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="mango">
-                    <img src="img/tastes/mango.png" alt="mango">
-                    <p>Mango pies<br><br>
+                    <img src="img/tastes/mango.png" alt="mango" id="mangoImg">
+                    <p id="mangoP">Mango pies<br><br>
                         <span id="mangoCost" class="costNum">50000000 Pies</span>
                     </p>
                 </div>
                 <div class="pieType" id="chocolate">
-                    <img src="img/store/chocolate.png" alt="chocolate">
-                    <p>Chocolate pies<br><br>
+                    <img src="img/store/chocolate.png" alt="chocolate" id="chocolateImg">
+                    <p id="chocolateP">Chocolate pies<br><br>
                         <span id="chocolateCost" class="costNum">1000000000 Pies</span>
                     </p>
                 </div>
         </section>
         <section id="pie">
             <h2>Homemade Bakery</h2>
-            <img src="/img/main-pie.png" alt="pie">
-            <p><span id="ppc">10</span> Pies Per Click</p>
+            <img src="img/main-pie.png" alt="pie" usemap="#pieMap">
+                <map name="pieMap" id="map">
+                    <area shape="poly" coords="100, 100, 200, 200" alt="pie" id="pieMap">
+                </map>
+            </div>
+            <p><span id="ppc">1</span> Pie Per Click</p>
         </section>
         <section id="store">
             <h3 id="storeSign">Store:</h3>
-                <div class="storeItem">
+                <div class="storeItem" id="ingredients">
                     <p>Get better ingredients<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 2000 Pies</span>
                     </p>
                     <img src="img/store/roller.png" alt="roller">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="catHelper">
                     <p>Get some helpers<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 10000 Pies</span>
                     </p>
                     <img src="img/store/cat.png" alt="cat">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="cupcake">
                     <p>Add cupcakes to your bakery<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 100000 Pies</span>
                     </p>
                     <img src="img/store/cupcake.png" alt="cupcake">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="cookie">
                     <p>Add cookies to your bakery<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 1000000 Pies</span>
                     </p>
                     <img src="img/store/cookie.png" alt="cookie">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="delivery">
                     <p>Deliver to home<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 50000000 Pies</span>
                     </p>
                     <img src="img/store/truck.png" alt="truck">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="expand">
                     <p>Expand your bakery<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 350000000 Pies</span>
                     </p>
                     <img src="img/store/bakery.png" alt="bakery">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="dogHelper">
                     <p>Get more helpers<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 5000000000 Pies</span>
                     </p>
                     <img src="img/store/dog.png" alt="dog">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="doughnut">
                     <p>Add doughnuts to your bakery<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 35000000000 Pies</span>
                     </p>
                     <img src="img/store/doughnut.png" alt="doughnut">
                 </div>
-                <div class="storeItem">
+                <div class="storeItem" id="worldDelivery">
                     <p>Deliver worldwide<br><br>
-                        <span class="storeCost"> Pies</span>
+                        <span class="storeCost"> 9999999999999 Pies</span>
                     </p>
                     <img src="img/store/planet.png" alt="planet">
                 </div>

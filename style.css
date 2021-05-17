@@ -125,8 +125,12 @@ body {
 }
 
 #pie > img{
-    width: 70%;
+    width: 600px;
     margin: auto;
+}
+
+map, area {
+    display: block;
 }
 
 #pie p {
