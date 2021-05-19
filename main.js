@@ -1,18 +1,23 @@
 let pies = 0;
 let pps = 0;
 let ppc = 1;
+let clicks = 0;
 
 let bakeCostArray = [100, 1000, 25000, 300000, 1200000, 4000000, 10000000, 50000000, 100000000];
-let storeCostArray = [2000, 10000, 100000, 1000000, 50000000, 350000000, 5000000000, 35000000000, 9999999999999]
+let bakeItemArray = ['strawberry', 'raspberry', 'apple', 'banana', 'blueberry', 'grape', 'cherry', 'mango', 'chocolate'];
+let storeCostArray = [2000, 10000, 100000, 1000000, 50000000, 350000000, 5000000000, 35000000000, 9999999999999];
+let storeItemArray = ['ingredients', 'catHelper', 'cupcake', 'cookie', 'delivery', 'expand', 'dogHelper', 'doughnut', 'worldDelivery'];
 let buyEvent = document.querySelectorAll('.pieType');
 let storeEvent = document.querySelectorAll('.storeItem');
-let clickMap = document.getElementById('pieMap');
+let clickMap = document.getElementById('map');
 
-buyEvent.forEach(buy => buy.addEventListener('click', buyPies));
-storeEvent.forEach(item => item.addEventListener('click', buyStore))
-clickMap.addEventListener('click', clickPie);
+buyEvent.forEach(buy => buy.addEventListener('mouseup', buyPies));
+storeEvent.forEach(item => item.addEventListener('mouseup', buyStore))
+clickMap.addEventListener('mouseup', clickPieUp);
+clickMap.addEventListener('mousedown', clickPieDown);
 
 //BAKE LEFT SIDE//
+
 function buyPies(event) {
     let eTarget = event.target;
     let target = '';
@@ -71,122 +76,194 @@ function buyPies(event) {
 
     switch(target) {
         case 'strawberry':
-            countPriceUp(bakeCostArray[0], 0);
-            break;
+            if(pies >= bakeCostArray[0]) {
+                countPriceUp(bakeCostArray[0],10 , 0);
+                break;
+            }
         case 'strawberryCost':
-            countPriceUp(bakeCostArray[0], 0);
-            break;
+            if(pies >= bakeCostArray[0]) {
+                countPriceUp(bakeCostArray[0], 10, 0);
+                break;
+            }
         case 'strawberryImg':
-            countPriceUp(bakeCostArray[0], 0);
-            break;
+            if(pies >= bakeCostArray[0]) {
+                countPriceUp(bakeCostArray[0], 10, 0);
+                break;
+            }
         case 'strawberryP':
-            countPriceUp(bakeCostArray[0], 0);
-            break;
+            if(pies >= bakeCostArray[0]) {
+                countPriceUp(bakeCostArray[0], 10, 0);
+                break;
+            }
         case 'raspberry':
-            countPriceUp(bakeCostArray[1], 1);
-            break;
+            if(pies >= bakeCostArray[1]) {
+                countPriceUp(bakeCostArray[1], 230, 1);
+                break;
+            }
         case 'raspberryCost':
-            countPriceUp(bakeCostArray[1], 1);
-            break;
+            if(pies >= bakeCostArray[1]) {
+                countPriceUp(bakeCostArray[1], 230, 1);
+                break;
+            }
         case 'raspberryImg':
-            countPriceUp(bakeCostArray[1], 1);
-            break;
+            if(pies >= bakeCostArray[1]) {
+                countPriceUp(bakeCostArray[1], 230, 1);
+                break;
+            }
         case 'raspberryP':
-            countPriceUp(bakeCostArray[1], 1);
-            break;
+            if(pies >= bakeCostArray[1]) {
+                countPriceUp(bakeCostArray[1], 230, 1);
+                break;
+            }
         case 'apple':
-            countPriceUp(bakeCostArray[2], 2);
-            break;
+            if(pies >= bakeCostArray[2]) {
+                countPriceUp(bakeCostArray[2], 400, 2);
+                break;
+            }
         case 'appleCost':
-            countPriceUp(bakeCostArray[2], 2);
-            break;
+            if(pies >= bakeCostArray[2]) {
+                countPriceUp(bakeCostArray[2], 400, 2);
+                break;
+            }
         case 'appleImg':
-            countPriceUp(bakeCostArray[2], 2);
-            break;
+            if(pies >= bakeCostArray[2]) {
+                countPriceUp(bakeCostArray[2], 400, 2);
+                break;
+            }
         case 'appleP':
-            countPriceUp(bakeCostArray[2], 2);
-            break;
+            if(pies >= bakeCostArray[2]) {
+                countPriceUp(bakeCostArray[2], 400, 2);
+                break;
+            }
         case 'banana':
-            countPriceUp(bakeCostArray[3], 3);
-            break;
+            if(pies >= bakeCostArray[3]) {
+                countPriceUp(bakeCostArray[3], 1390, 3);
+                break;
+            }
         case 'bananaCost':
-            countPriceUp(bakeCostArray[3], 3);
-            break;
+            if(pies >= bakeCostArray[3]) {
+                countPriceUp(bakeCostArray[3], 1390, 3);
+                break;
+            }
         case 'bananaImg':
-            countPriceUp(bakeCostArray[3], 3);
-            break;
+            if(pies >= bakeCostArray[3]) {
+                countPriceUp(bakeCostArray[3], 1390, 3);
+                break;
+            }
         case 'bananaP':
-            countPriceUp(bakeCostArray[3], 3);
-            break;
+            if(pies >= bakeCostArray[3]) {
+                countPriceUp(bakeCostArray[3], 1390, 3);
+                break;
+            }
         case 'blueberry':
-            countPriceUp(bakeCostArray[4], 4);
-            break;
+            if(pies >= bakeCostArray[4]) {
+                countPriceUp(bakeCostArray[4], 2599, 4);
+                break;
+            }
         case 'blueberryCost':
-            countPriceUp(bakeCostArray[4], 4);
-            break;
+            if(pies >= bakeCostArray[4]) {
+                countPriceUp(bakeCostArray[4], 2599, 4);
+                break;
+            }
         case 'blueberryImg':
-            countPriceUp(bakeCostArray[4], 4);
-            break;
+            if(pies >= bakeCostArray[4]) {
+                countPriceUp(bakeCostArray[4], 2599, 4);
+                break;
+            }
         case 'blueberryP':
-            countPriceUp(bakeCostArray[4], 4);
-            break;
+            if(pies >= bakeCostArray[4]) {
+                countPriceUp(bakeCostArray[4], 2599, 4);
+                break;
+            }
         case 'grape':
-            countPriceUp(bakeCostArray[5], 5);
-            break;
+            if(pies >= bakeCostArray[5]) {
+                countPriceUp(bakeCostArray[5], 10000, 5);
+                break;
+            }
         case 'grapeCost':
-            countPriceUp(bakeCostArray[5], 5);
-            break;
+            if(pies >= bakeCostArray[5]) {
+                countPriceUp(bakeCostArray[5], 10000, 5);
+                break;
+            }
         case 'grapeImg':
-            countPriceUp(bakeCostArray[5], 5);
-            break;
+            if(pies >= bakeCostArray[5]) {
+                countPriceUp(bakeCostArray[5], 10000, 5);
+                break;
+            }
         case 'grapeP':
-            countPriceUp(bakeCostArray[5], 5);
-            break;
+            if(pies >= bakeCostArray[5]) {
+                countPriceUp(bakeCostArray[5], 10000, 5);
+                break;
+            }
         case 'cherry':
-            countPriceUp(bakeCostArray[6], 6);
-            break;
+            if(pies >= bakeCostArray[6]) {
+                countPriceUp(bakeCostArray[6], 25000, 6);
+                break;
+            }
         case 'cherryCost':
-            countPriceUp(bakeCostArray[6], 6);
-            break;
+            if(pies >= bakeCostArray[6]) {
+                countPriceUp(bakeCostArray[6], 25000, 6);
+                break;
+            }
         case 'cherryImg':
-            countPriceUp(bakeCostArray[6], 6);
-            break;
+            if(pies >= bakeCostArray[6]) {
+                countPriceUp(bakeCostArray[6], 25000, 6);
+                break;
+            }
         case 'cherryP':
-            countPriceUp(bakeCostArray[6], 6);
-            break;
+            if(pies >= bakeCostArray[6]) {
+                countPriceUp(bakeCostArray[6], 25000, 6);
+                break;
+            }
         case 'mango':
-            countPriceUp(bakeCostArray[7], 7);
-            break;
+            if(pies >= bakeCostArray[7]) {
+                countPriceUp(bakeCostArray[7], 60000, 7);
+                break;
+            }
         case 'mangoCost':
-            countPriceUp(bakeCostArray[7], 7);
-            break;
+            if(pies >= bakeCostArray[7]) {
+                countPriceUp(bakeCostArray[7], 60000, 7);
+                break;
+            }
         case 'mangoImg':
-            countPriceUp(bakeCostArray[7], 7);
-            break;
+            if(pies >= bakeCostArray[7]) {
+                countPriceUp(bakeCostArray[7], 60000, 7);
+                break;
+            }
         case 'mangoP':
-            countPriceUp(bakeCostArray[7], 7);
-            break;
+            if(pies >= bakeCostArray[7]) {
+                countPriceUp(bakeCostArray[7], 60000, 7);
+                break;
+            }
         case 'chocolate':
-            countPriceUp(bakeCostArray[8], 8);
-            break;
+            if(pies > bakeCostArray[8]) {
+                countPriceUp(bakeCostArray[8], 200000, 8);
+                break;
+            }
         case 'chocolateCost':
-            countPriceUp(bakeCostArray[8], 8);
-            break;
+            if(pies >= bakeCostArray[8]) {
+                countPriceUp(bakeCostArray[8], 200000, 8);
+                break;
+            }
         case 'chocolateImg':
-            countPriceUp(bakeCostArray[8], 8);
-            break;
+            if(pies >= bakeCostArray[8]) {
+                countPriceUp(bakeCostArray[8], 200000, 8);
+                break;
+            }
         case 'chocolateP':
-            countPriceUp(bakeCostArray[8], 8);
-            break;
+            if(pies >= bakeCostArray[8]) {
+                countPriceUp(bakeCostArray[8], 200000, 8);
+                break;
+            }
         default:
             console.log('bake error');
     }
     
 }
 
-function countPriceUp(taste, i) {
-    pieCounter += taste;
-    pps += taste;
+function countPriceUp(taste, addPies ,i) {
+    pps += addPies;
+    pies = pies - taste;
     taste = taste / 0.6;
     taste = parseInt(taste);
     Math.floor(taste);
@@ -224,6 +301,7 @@ function countPriceUp(taste, i) {
 }
 
 //STORE RIGHT SIDE//
+
 function buyStore(event) {
     let target = event.target;
 
@@ -240,56 +318,66 @@ function buyStore(event) {
 
     switch(target) {
         case 'ingredients':
-            if(pies > bakeCostArray[0]) {
+            if(pies >= storeCostArray[0]) {
                 ppc += 9;
+                pies = pies - storeCostArray[0];
                 document.getElementById(target).remove();
+                storeItemArray.splice(0, 1);
             }
             break;
         case 'catHelper':
-            if(pies > bakeCostArray[1]) {
-                ppc += 30;
+            if(pies >= storeCostArray[1]) {
+                ppc += 100;
+                pies = pies - storeCostArray[1];
                 document.getElementById(target).remove();
             }
             break;
         case 'cupcake':
-            if(pies > bakeCostArray[2]) {
-                ppc += 100;
+            if(pies >= storeCostArray[2]) {
+                ppc += 500;
+                pies = pies - storeCostArray[2];
                 document.getElementById(target).remove();
             }
             break;
         case 'cookie':
-            if(pies > bakeCostArray[3]) {
-                ppc += 300;
+            if(pies >= storeCostArray[3]) {
+                ppc += 2000;
+                pies = pies - storeCostArray[3];
                 document.getElementById(target).remove();
             }
             break;
         case 'delivery':
-            if(pies > bakeCostArray[4]) {
-                ppc += 1000;
+            if(pies >= storeCostArray[4]) {
+                ppc += 6000;
+                pies = pies - storeCostArray[4];
                 document.getElementById(target).remove();
             }
             break;
         case 'expand':
-            if(pies > bakeCostArray[5]) {
-                ppc += 2000;
+            if(pies >= storeCostArray[5]) {
+                ppc += 10000;
+                pies = pies - storeCostArray[5];
                 document.getElementById(target).remove();
             }
             break;
         case 'dogHelper':
-            if(pies > bakeCostArray[6]) {
-                ppc += 5000;
+            if(pies >= storeCostArray[6]) {
+                ppc += 16000;
+                pies = pies - storeCostArray[6];
                 document.getElementById(target).remove();
             }
             break;
         case 'doughnut':
-            if(pies > bakeCostArray[7]) {
-                ppc += 10000;
+            if(pies >= storeCostArray[7]) {
+                ppc += 50000;
+                pies = pies - storeCostArray[7];
                 document.getElementById(target).remove();
             }
             break;
         case 'worldDelivery':
-            if(pies > bakeCostArray[8]) {
+            if(pies >= storeCostArray[8]) {
                 ppc += 200000;
+                pies = pies - storeCostArray[8];
                 document.getElementById(target).remove();
             }
             break;
@@ -299,7 +387,155 @@ function buyStore(event) {
 }
 
 //PIE MIDDLE CLICK//
-function clickPie(event) {
-    event.preventDefault();
-    console.log('click works');
+
+function clickPieUp() {
+    pies += ppc;
+    document.getElementById('pieCounter').innerHTML = pies;
+    pieAnimation();
+    clicks++;
+    if(clicks === 99) {
+        start();
+    }
 }
+
+//KEEP EVERYTHING UPDATED//
+
+function start() {
+    var startPies = setInterval(piesPerSecond, 1000);
+    var checkSites = setInterval(checkSite, 100);
+}
+
+function piesPerSecond() {
+    pies += pps;
+}
+
+function checkSite() {
+    document.getElementById('pps').innerHTML = pps;
+    document.getElementById('ppc').innerHTML = ppc;
+    document.getElementById('pieCounter').innerHTML = pies;
+    changeBakeColor();
+    changeStoreColor();
+}
+
+//COLOR CHANGES//
+
+function changeBakeColor() {
+    for(let i = 0; i < bakeItemArray.length; i++) {
+        let id = bakeItemArray[i];        
+        if(pies >= bakeCostArray[i]) {
+            switch(id) {
+                case 'strawberry':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'raspberry':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'apple':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'banana':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'blueberry':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'grape':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'cherry':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'mango':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'chocolate':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                default:
+                    console.log('bake color change failed');
+                    break;
+            }
+        } else if(pies < bakeCostArray[i]) {
+            document.getElementById(id).style.color = '#00000080';
+            document.getElementById(id).style.border = '2px solid #00000080';
+        }
+    }
+    
+}
+
+function changeStoreColor() {
+    for(let i = 0; i < storeItemArray.length; i++) {
+        let id = storeItemArray[i];        
+        if(pies >= storeCostArray[i]) {
+            switch(id) {
+                case 'ingredients':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'catHelper':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'cupcake':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'cookie':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'delivery':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'expand':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'dogHelper':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'doughnut':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case 'worldDelivery':
+                    document.getElementById(id).style.color = '#1b1308';
+                    document.getElementById(id).style.border = '2px solid #1b1308';
+                    break;
+                case null:
+                    break;
+                default:
+                    console.log('store color change failed');
+                    break;
+            }
+        } else if(pies < storeCostArray[i]) {
+            document.getElementById(id).style.color = '#00000080';
+            document.getElementById(id).style.border = '2px solid #00000080';
+        }
+    }
+    
+}
+
+//PIE ANIMATION//
+
+function pieAnimation() {
+
+}
+
+function clickPieDown() {
+
+}
+
+//TOOLTIP//
+//mouseover thing and for loop with arrays and get id

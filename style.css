@@ -2,6 +2,7 @@
     --bg: #c07e41;
     --lightbg: #f3ceab;
     --text: #1b1308;
+    --text-light: #00000080;
 }
 
 * {
@@ -12,6 +13,7 @@ html {
     background-image: url("img/flour-bg.jpg");
     background-size: auto;
     background-repeat: no-repeat;
+    width: 100%;
 }
 
 body {
@@ -56,21 +58,25 @@ body {
 #selection, #store {
     flex: 25%;
     display: grid;
-    padding: 0 30px 20px 30px;
+    padding: 0 20px 20px 20px;
 }
 
 #selection h3, #store h3 {
     text-transform: capitalize;
     padding: 10px 10px;
+    margin-bottom: 10px;
+    height: 50px;
     border: 2px solid var(--text);
     background-image: linear-gradient(to right, var(--lightbg), var(--bg));
 }
 
 .pieType, .storeItem{
+    color: var(--text-light);
     min-width: 360px;
     height: 100px;
     margin: 5px;
-    border: 2px solid var(--text);
+    display: block;
+    border: 2px solid var(--text-light);
     background-image: linear-gradient(var(--lightbg), var(--lightbg), var(--bg));
 }
 
@@ -96,6 +102,16 @@ body {
 .pieType img, .storeItem img {
     height: 80px;
     padding-left: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 5px;
 }
 
 .storeItem img {
@@ -125,7 +141,7 @@ body {
 }
 
 #pie > img{
-    width: 600px;
+    width: 500px;
     margin: auto;
 }
 
