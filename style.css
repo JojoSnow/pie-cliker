@@ -127,6 +127,11 @@ li {
     margin-top: 8px;
 }
 
+#addDiv {
+    height: 0px;
+    visibility: hidden;
+}
+
 /*MIDDLE*/
 #pie {
     flex: 50%;
@@ -141,8 +146,10 @@ li {
 }
 
 #pie > img{
-    width: 500px;
+    width: 480px;
     margin: auto;
+    text-align: center;
+    display: block;
 }
 
 map, area {
@@ -154,6 +161,31 @@ map, area {
     padding: 20px;
     border: 2px solid var(--text);
     background-image: linear-gradient(var(--bg), var(--lightbg), var(--lightbg), var(--bg));
+}
+
+#pieImgDiv {
+    width: 500px;
+    height: 500px;
+    padding-top: 20px;
+}
+
+/*TOOLTIP*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: var(--lightbg);
+    padding: 3px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover {
+    visibility: visible;
 }
 
 /*FOOTER*/

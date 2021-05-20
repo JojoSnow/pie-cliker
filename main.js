@@ -3,7 +3,7 @@ let pps = 0;
 let ppc = 1;
 let clicks = 0;
 
-let bakeCostArray = [100, 1000, 25000, 300000, 1200000, 4000000, 10000000, 50000000, 100000000];
+let bakeCostArray = [100, 2000, 25000, 300000, 1200000, 4000000, 10000000, 50000000, 100000000];
 let bakeItemArray = ['strawberry', 'raspberry', 'apple', 'banana', 'blueberry', 'grape', 'cherry', 'mango', 'chocolate'];
 let storeCostArray = [2000, 10000, 100000, 1000000, 50000000, 350000000, 5000000000, 35000000000, 9999999999999];
 let storeItemArray = ['ingredients', 'catHelper', 'cupcake', 'cookie', 'delivery', 'expand', 'dogHelper', 'doughnut', 'worldDelivery'];
@@ -15,6 +15,7 @@ buyEvent.forEach(buy => buy.addEventListener('mouseup', buyPies));
 storeEvent.forEach(item => item.addEventListener('mouseup', buyStore))
 clickMap.addEventListener('mouseup', clickPieUp);
 clickMap.addEventListener('mousedown', clickPieDown);
+window.addEventListener('load', customCSS);
 
 //BAKE LEFT SIDE//
 
@@ -77,7 +78,7 @@ function buyPies(event) {
     switch(target) {
         case 'strawberry':
             if(pies >= bakeCostArray[0]) {
-                countPriceUp(bakeCostArray[0],10 , 0);
+                countPriceUp(bakeCostArray[0], 10 , 0);
                 break;
             }
         case 'strawberryCost':
@@ -97,22 +98,22 @@ function buyPies(event) {
             }
         case 'raspberry':
             if(pies >= bakeCostArray[1]) {
-                countPriceUp(bakeCostArray[1], 230, 1);
+                countPriceUp(bakeCostArray[1], 150, 1);
                 break;
             }
         case 'raspberryCost':
             if(pies >= bakeCostArray[1]) {
-                countPriceUp(bakeCostArray[1], 230, 1);
+                countPriceUp(bakeCostArray[1], 150, 1);
                 break;
             }
         case 'raspberryImg':
             if(pies >= bakeCostArray[1]) {
-                countPriceUp(bakeCostArray[1], 230, 1);
+                countPriceUp(bakeCostArray[1], 150, 1);
                 break;
             }
         case 'raspberryP':
             if(pies >= bakeCostArray[1]) {
-                countPriceUp(bakeCostArray[1], 230, 1);
+                countPriceUp(bakeCostArray[1], 150, 1);
                 break;
             }
         case 'apple':
@@ -321,64 +322,72 @@ function buyStore(event) {
             if(pies >= storeCostArray[0]) {
                 ppc += 9;
                 pies = pies - storeCostArray[0];
-                document.getElementById(target).remove();
-                storeItemArray.splice(0, 1);
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '100px';
             }
             break;
         case 'catHelper':
             if(pies >= storeCostArray[1]) {
                 ppc += 100;
                 pies = pies - storeCostArray[1];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '200px';
             }
             break;
         case 'cupcake':
             if(pies >= storeCostArray[2]) {
                 ppc += 500;
                 pies = pies - storeCostArray[2];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '300px';
             }
             break;
         case 'cookie':
             if(pies >= storeCostArray[3]) {
                 ppc += 2000;
                 pies = pies - storeCostArray[3];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '400px';
             }
             break;
         case 'delivery':
             if(pies >= storeCostArray[4]) {
                 ppc += 6000;
                 pies = pies - storeCostArray[4];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '500px';
             }
             break;
         case 'expand':
             if(pies >= storeCostArray[5]) {
                 ppc += 10000;
                 pies = pies - storeCostArray[5];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '600px';
             }
             break;
         case 'dogHelper':
             if(pies >= storeCostArray[6]) {
                 ppc += 16000;
                 pies = pies - storeCostArray[6];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '200px';
             }
             break;
         case 'doughnut':
             if(pies >= storeCostArray[7]) {
                 ppc += 50000;
                 pies = pies - storeCostArray[7];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '800px';
             }
             break;
         case 'worldDelivery':
             if(pies >= storeCostArray[8]) {
                 ppc += 200000;
                 pies = pies - storeCostArray[8];
-                document.getElementById(target).remove();
+                document.getElementById(target).style.display = 'none';
+                document.getElementById('addDiv').style.height = '900px';
             }
             break;
         default:
@@ -391,7 +400,6 @@ function buyStore(event) {
 function clickPieUp() {
     pies += ppc;
     document.getElementById('pieCounter').innerHTML = pies;
-    pieAnimation();
     clicks++;
     if(clicks === 99) {
         start();
@@ -411,7 +419,7 @@ function piesPerSecond() {
 
 function checkSite() {
     document.getElementById('pps').innerHTML = pps;
-    document.getElementById('ppc').innerHTML = ppc;
+    document.getElementById('ppc').innerHTML = ppc + 'Pies Per Click';
     document.getElementById('pieCounter').innerHTML = pies;
     changeBakeColor();
     changeStoreColor();
@@ -529,13 +537,31 @@ function changeStoreColor() {
 
 //PIE ANIMATION//
 
-function pieAnimation() {
-
-}
-
+let i = null;
 function clickPieDown() {
+    let pie = document.getElementById('pieImg');
+    let width = 480;
+    clearInterval(i);
+    i = setInterval(downAnim, 10);
+    function downAnim() {
+        if(width === 500) {
+            clearInterval(i);
+        } else {
+            width++;
+            pie.style.width = width + 'px';
+            pie.style.width = width + 'px';
+        }
+    }
+}
+
+function floatingText() {
 
 }
 
-//TOOLTIP//
-//mouseover thing and for loop with arrays and get id
+//CSS CHANGES//
+function customCSS() {
+    let pie = document.getElementById('pieImg');
+    pie.style.position = 'absolute';
+    pie.style.left = '50%';
+    pie.style.transform = 'translate(-50%, 0)';
+}

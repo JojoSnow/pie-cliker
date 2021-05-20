@@ -25,7 +25,7 @@
                 <li class="pieType" id="raspberry">
                     <img src="img/tastes/raspberry.png" alt="raspberry" id="raspberryImg">
                     <p id="raspberryP">Raspberry pies<br><br>
-                        <span id="raspberryCost" class="costNum">1000 Pies</span>
+                        <span id="raspberryCost" class="costNum">2000 Pies</span>
                     </p>
                 </li>
                 <li class="pieType" id="apple">
@@ -74,16 +74,17 @@
         </section>
         <section id="pie">
             <h2>Homemade Bakery</h2>
-            <img src="img/main-pie.png" alt="pie" usemap="#pieMap">
+            <div id="pieImgDiv">
+            <img src="img/main-pie.png" alt="pie" usemap="#pieMap" id="pieImg">
                 <map name="pieMap" id="map">
                     <area shape="poly" coords="82,317,104,298,130,284,156,274,188,267,227,260,264,259,316,269,352,281,381,299,403,319,422,345,436,365,453,361,461,371,484,382,497,398,493,413,479,420,457,417,448,443,435,464,420,478,365,480,267,477,66,476,42,447,33,419,13,415,3,400,10,381,31,369,43,358,57,355,68,335" alt="pie" id="pieMap">
                 </map>
             </div>
-            <p><span id="ppc">1</span> Pie Per Click</p>
+            <p><span id="ppc">1 Pie Per Click</span></p>
         </section>
         <section id="store">
             <h3 id="storeSign">Store:</h3>
-            <ul>
+            <ul id="storeList">
                 <li class="storeItem" id="ingredients">
                     <p>Get better ingredients<br><br>
                         <span class="storeCost"> 2000 Pies</span>
@@ -139,6 +140,7 @@
                     <img src="img/store/planet.png" alt="planet">
                 </li>
             </ul>
+            <div id="addDiv"></div>
         </section>
     </main>
     <footer id="footer">
