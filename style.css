@@ -154,6 +154,7 @@ li {
 
 map, area {
     display: block;
+    cursor: pointer;
 }
 
 #pie p {
@@ -167,25 +168,7 @@ map, area {
     width: 500px;
     height: 500px;
     padding-top: 20px;
-}
-
-/*TOOLTIP*/
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltiptext {
-    visibility: hidden;
-    width: 100px;
-    background-color: var(--lightbg);
-    padding: 3px;
-    position: absolute;
-    z-index: 1;
-}
-
-.tooltip:hover {
-    visibility: visible;
+    margin: auto;
 }
 
 /*FOOTER*/

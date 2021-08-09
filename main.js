@@ -419,7 +419,7 @@ function piesPerSecond() {
 
 function checkSite() {
     document.getElementById('pps').innerHTML = pps;
-    document.getElementById('ppc').innerHTML = ppc + 'Pies Per Click';
+    document.getElementById('ppc').innerHTML = ppc + ' Pies Per Click';
     document.getElementById('pieCounter').innerHTML = pies;
     changeBakeColor();
     changeStoreColor();
@@ -435,38 +435,47 @@ function changeBakeColor() {
                 case 'strawberry':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'raspberry':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'apple':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'banana':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'blueberry':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'grape':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'cherry':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'mango':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'chocolate':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 default:
                     console.log('bake color change failed');
@@ -475,6 +484,7 @@ function changeBakeColor() {
         } else if(pies < bakeCostArray[i]) {
             document.getElementById(id).style.color = '#00000080';
             document.getElementById(id).style.border = '2px solid #00000080';
+            document.getElementById(id).style.cursor = 'default';
         }
     }
     
@@ -488,38 +498,47 @@ function changeStoreColor() {
                 case 'ingredients':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'catHelper':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'cupcake':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'cookie':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'delivery':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'expand':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'dogHelper':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'doughnut':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case 'worldDelivery':
                     document.getElementById(id).style.color = '#1b1308';
                     document.getElementById(id).style.border = '2px solid #1b1308';
+                    document.getElementById(id).style.cursor = 'pointer';
                     break;
                 case null:
                     break;
@@ -530,6 +549,7 @@ function changeStoreColor() {
         } else if(pies < storeCostArray[i]) {
             document.getElementById(id).style.color = '#00000080';
             document.getElementById(id).style.border = '2px solid #00000080';
+            document.getElementById(id).style.cursor = 'default';
         }
     }
     
@@ -552,10 +572,6 @@ function clickPieDown() {
             pie.style.width = width + 'px';
         }
     }
-}
-
-function floatingText() {
-
 }
 
 //CSS CHANGES//
